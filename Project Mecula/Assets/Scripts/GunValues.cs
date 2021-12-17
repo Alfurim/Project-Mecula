@@ -22,7 +22,6 @@ public class GunValues : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
-
         }
     }
 
@@ -41,6 +40,4 @@ public class GunValues : MonoBehaviour
             }
         }
     }
-
-
 }

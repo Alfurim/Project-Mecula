@@ -5,11 +5,8 @@ using UnityEngine.UI;
 
 public class EnemyCounter : MonoBehaviour
 {
-
     GameObject[] enemies;
     public Text enemyCountText;
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -23,10 +20,5 @@ public class EnemyCounter : MonoBehaviour
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
         enemyCountText.text = "Enemies :" + enemies.Length.ToString();
-
-
-
     }
-
-
 }
