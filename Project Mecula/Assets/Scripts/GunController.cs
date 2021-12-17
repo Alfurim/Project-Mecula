@@ -22,7 +22,6 @@ public class GunController : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
-
         {
             if (Time.time > m_shootRateTimeStamp)
             {
@@ -32,9 +31,6 @@ public class GunController : MonoBehaviour
                 go.GetComponent<Rigidbody>().AddForce(gun.forward * shootForce);
                 m_shootRateTimeStamp = Time.time + shootRate;
             }
-
         }
-
     }
-
 }

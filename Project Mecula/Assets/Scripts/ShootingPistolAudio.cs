@@ -17,7 +17,6 @@ public class ShootingPistolAudio : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             mAudioSrc.Play();
-
         }
     }
 }
