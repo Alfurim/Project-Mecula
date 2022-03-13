@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    int score = 0;
+    bool hasKey = false;
     public float health = 100.0f;
+    float damage = 5f;
     Vector3 respawnPos;
 
     public GameObject bullet;
@@ -24,19 +27,25 @@ public class Player : MonoBehaviour
 
         }
 
-        /*if (health <= 0)
+
+        if (health <= 0)
         {
             SceneManager.LoadScene("Death Screen");
             //This will transition over to the death screen if the health of the player is 0
-        }*/
+        }
+    }
+
+    public void IncreaseScore()
+    {
+        score++;
+        Debug.Log(score);
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-
         if (hit.gameObject.tag == "Enemy")
         {
-            TakeDamage(5f);
+            health -= damage;
             Debug.Log("I have hit the enemy");
             Debug.Log(health);
         }
@@ -59,3 +68,22 @@ public class Player : MonoBehaviour
         health = 100.0f;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPathfinding : MonoBehaviour
+public class DefenderAI : MonoBehaviour
 {
 
     public Transform player;
@@ -19,7 +19,7 @@ public class EnemyPathfinding : MonoBehaviour
 
     void Start()
     {
-        enemyHealth = 100;
+        enemyHealth = 150;
         UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.destination = goal.position;
 
