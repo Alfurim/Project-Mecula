@@ -154,22 +154,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 40302005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4597bdb33830d74d9b9e14e46f6e5c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 3194972036262c946b99f7be7563c029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 611962499}
-  playerDistance: 0
-  awareAI: 10
-  AIMoveSpeed: 10
-  damping: 6
-  navPoint:
-  - {fileID: 1618462065}
-  - {fileID: 567250489}
-  - {fileID: 85099172}
-  - {fileID: 1311947280}
-  agent: {fileID: 40302007}
-  destPoint: 0
-  goal: {fileID: 611962499}
+  health: 50
 --- !u!195 &40302007
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1242,22 +1230,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 377048045}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4597bdb33830d74d9b9e14e46f6e5c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 3194972036262c946b99f7be7563c029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 611962499}
-  playerDistance: 10
-  awareAI: 2
-  AIMoveSpeed: 0
-  damping: 6
-  navPoint:
-  - {fileID: 887510392}
-  - {fileID: 950315534}
-  - {fileID: 1177424861}
-  - {fileID: 2021062355}
-  agent: {fileID: 377048047}
-  destPoint: 0
-  goal: {fileID: 611962499}
+  health: 50
 --- !u!195 &377048047
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1605,11 +1581,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
   m_PrefabInstance: {fileID: 409974122}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &611962499 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-  m_PrefabInstance: {fileID: 409974122}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &611962500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1619,7 +1590,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 611962494}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba66cc17d57a0004c87de867e943ba6e, type: 3}
+  m_Script: {fileID: 11500000, guid: 2fc52a048ae3881498a1394b4a9e9e2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
@@ -1803,22 +1774,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 705611711}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4597bdb33830d74d9b9e14e46f6e5c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 3194972036262c946b99f7be7563c029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 611962499}
-  playerDistance: 10
-  awareAI: 10
-  AIMoveSpeed: 5
-  damping: 6
-  navPoint:
-  - {fileID: 886102377}
-  - {fileID: 281635273}
-  - {fileID: 1795041131}
-  - {fileID: 1474583927}
-  agent: {fileID: 705611713}
-  destPoint: 0
-  goal: {fileID: 611962499}
+  health: 50
 --- !u!195 &705611713
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3440,22 +3399,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1855423399}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4597bdb33830d74d9b9e14e46f6e5c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 3194972036262c946b99f7be7563c029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 611962499}
-  playerDistance: 0
-  awareAI: 10
-  AIMoveSpeed: 10
-  damping: 6
-  navPoint:
-  - {fileID: 1038004082}
-  - {fileID: 784512761}
-  - {fileID: 228567325}
-  - {fileID: 1110724606}
-  agent: {fileID: 1855423401}
-  destPoint: 0
-  goal: {fileID: 611962499}
+  health: 50
 --- !u!195 &1855423401
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3697,20 +3644,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1908616061}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4597bdb33830d74d9b9e14e46f6e5c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 3194972036262c946b99f7be7563c029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 611962499}
-  playerDistance: 0
-  awareAI: 10
-  AIMoveSpeed: 10
-  damping: 6
-  navPoint:
-  - {fileID: 1554686224}
-  - {fileID: 2051655573}
-  agent: {fileID: 1908616068}
-  destPoint: 0
-  goal: {fileID: 611962499}
+  health: 50
 --- !u!195 &1908616068
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3764,22 +3701,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1914711730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4597bdb33830d74d9b9e14e46f6e5c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 3194972036262c946b99f7be7563c029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 611962499}
-  playerDistance: 0
-  awareAI: 10
-  AIMoveSpeed: 10
-  damping: 6
-  navPoint:
-  - {fileID: 525736391}
-  - {fileID: 1527392863}
-  - {fileID: 361158744}
-  - {fileID: 1468732666}
-  agent: {fileID: 1914711732}
-  destPoint: 0
-  goal: {fileID: 611962499}
+  health: 50
 --- !u!195 &1914711732
 NavMeshAgent:
   m_ObjectHideFlags: 0
