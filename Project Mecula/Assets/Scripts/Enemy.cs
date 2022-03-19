@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float health = 2f;
+    public float bloodGain = 10f;
 
     void Start()
     {
@@ -13,7 +14,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -26,6 +27,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0f)
         {
             Destroy(gameObject);
+            BloodMeter.StopBloodMeter(bloodGain);
         }
     }
 }

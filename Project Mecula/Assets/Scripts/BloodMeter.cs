@@ -4,21 +4,43 @@ using UnityEngine.UI;
 
 public class BloodMeter : MonoBehaviour
 {
-    public float bloodMeter;
-    public float bloodMeterDecreasePerSecond;
+    public static float bloodMeter;
+    public static float decreasePerSecond;
+    public static float stopTimer;
     public Text bloodMeterText;
     void Start()
     {
         bloodMeter = 50f;
-        bloodMeterDecreasePerSecond = 0.5f * (Time.deltaTime * 2);
+        decreasePerSecond = 2f * Time.deltaTime;
+        stopTimer = 2f;
     }
 
     void Update()
     {
         bloodMeterText.text = "Blood Meter: " + (int)bloodMeter;
+    }
+
+    private void FixedUpdate()
+    {
+        if (stopTimer < 2f)
+        {
+            decreasePerSecond = 0f * Time.deltaTime;
+            stopTimer = stopTimer + 1f * Time.deltaTime;
+        }
+        else
+        {
+            decreasePerSecond = 2f * Time.deltaTime;
+        }
         if (bloodMeter > 0)
         {
-            bloodMeter -= bloodMeterDecreasePerSecond;
+            bloodMeter -= decreasePerSecond;
         }
+        Debug.Log(decreasePerSecond);
+    }
+
+    public static void StopBloodMeter(float bloodGain)
+    {
+        BloodMeter.bloodMeter += bloodGain;
+        BloodMeter.stopTimer = 0;
     }
 }
