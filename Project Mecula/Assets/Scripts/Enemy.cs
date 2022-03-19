@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float health = 50;
-    int score = 0;
+    public float health = 2f;
 
     void Start()
     {
@@ -26,15 +25,7 @@ public class Enemy : MonoBehaviour
         health -= amount;
         if (health <= 0f)
         {
-            //if health is lower or equal to 0 the enemy will die
-            Die();
+            Destroy(gameObject);
         }
-    }
-
-    void Die()
-    {
-        Destroy(gameObject);
-        score++;
-        Debug.Log(score);
     }
 }
