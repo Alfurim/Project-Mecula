@@ -8,8 +8,10 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 6f;
     float horizontalMovement;
     float verticalMovement;
+    float movementMultiplier = 10f;
+    float rbDrag = 6f;
 
-    Vector3 moveDirection;
+    
 
     Rigidbody rb;
 
@@ -21,6 +23,18 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+
+    }
+
+    
+
+    void ControlDrag()
+    {
+        rb.drag = rbDrag;
+    }
+
+    private void FixedUpdate()
+    {
         MyInput();
     }
 
@@ -29,17 +43,12 @@ public class PlayerMovement : MonoBehaviour
         horizontalMovement = Input.GetAxisRaw("Horizontal");
         verticalMovement = Input.GetAxisRaw("Vertical");
 
-        moveDirection = transform.forward * verticalMovement + transform.right * horizontalMovement;
+        Vector3 moveDirection = new Vector3(horizontalMovement, 0f, verticalMovement);
+        rb.velocity = moveDirection * Time.deltaTime * moveSpeed;
     }
-
-    private void FixedUpdate()
+    /*private void MovePlayer()
     {
-        MovePlayer();
-    }
-
-    private void MovePlayer()
-    {
-        rb.AddForce(moveDirection.normalized * moveSpeed, ForceMode.Acceleration);
+        rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
         
-    }
+    }*/
 }
