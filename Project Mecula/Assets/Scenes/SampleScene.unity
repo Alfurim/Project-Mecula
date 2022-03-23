@@ -416,10 +416,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.6
+  m_Height: 2.05087
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.024564981, z: 0}
 --- !u!23 &43475548
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2698,6 +2698,7 @@ GameObject:
   - component: {fileID: 1471810165}
   - component: {fileID: 1471810164}
   - component: {fileID: 1471810163}
+  - component: {fileID: 1471810166}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2717,7 +2718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebe61d72d159a14da1243102b1d944c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 60
 --- !u!54 &1471810164
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2741,7 +2742,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471810162}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -31.37, y: 1, z: 8.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2749,7 +2750,21 @@ Transform:
   - {fileID: 2111601629}
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1471810166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471810162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f60dd4945399cc4996f3f92d219590f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensX: 0
+  sensY: 0
 --- !u!1 &1474583926
 GameObject:
   m_ObjectHideFlags: 0

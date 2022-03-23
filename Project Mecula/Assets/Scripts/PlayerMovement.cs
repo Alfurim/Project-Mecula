@@ -5,13 +5,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 6f;
-    float horizontalMovement;
-    float verticalMovement;
-    float movementMultiplier = 10f;
-    float rbDrag = 6f;
-
-    
+    public float moveSpeed = 60f;
 
     Rigidbody rb;
 
@@ -26,29 +20,16 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    
-
-    void ControlDrag()
-    {
-        rb.drag = rbDrag;
-    }
-
     private void FixedUpdate()
     {
-        MyInput();
-    }
+        float moveHorizontal = Input.GetAxisRaw("Horizontal");
+        float moveVertical = Input.GetAxisRaw("Vertical");
 
-    private void MyInput()
-    {
-        horizontalMovement = Input.GetAxisRaw("Horizontal");
-        verticalMovement = Input.GetAxisRaw("Vertical");
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
-        Vector3 moveDirection = new Vector3(horizontalMovement, 0f, verticalMovement);
-        rb.velocity = moveDirection * Time.deltaTime * moveSpeed;
+        /*movement = moveSpeed * Time.deltaTime * movement.normalized;*/
+
+        /*rb.MovePosition(transform.position + movement);*/
+        rb.velocity = movement * Time.deltaTime * moveSpeed;
     }
-    /*private void MovePlayer()
-    {
-        rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
-        
-    }*/
 }
