@@ -4,35 +4,40 @@ using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
-    public float sensX=1;
-    public float sensY=1;
+    [Header("References")]
+    [SerializeField] WallRun wallRun;
+
+    [SerializeField] private float sensX = 100f;
+    [SerializeField] private float sensY = 100f;
+
+    [SerializeField] Transform cam = null;
+    [SerializeField] Transform orientation = null;
+
     float mouseX;
     float mouseY;
+
+    float multiplier = 0.01f;
+
     float xRotation;
     float yRotation;
-    Camera cam;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        cam = GetComponentInChildren<Camera>();
-
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         mouseX = Input.GetAxisRaw("Mouse X");
         mouseY = Input.GetAxisRaw("Mouse Y");
 
-        yRotation += mouseX * sensX;
-        xRotation -= mouseY * sensY;
+        yRotation += mouseX * sensX * multiplier;
+        xRotation -= mouseY * sensY * multiplier;
 
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
-        transform.rotation = Quaternion.Euler(0, yRotation, 0);
+        cam.transform.rotation = Quaternion.Euler(xRotation, yRotation, wallRun.tilt);
+        orientation.transform.rotation = Quaternion.Euler(0, yRotation, 0);
     }
 }
