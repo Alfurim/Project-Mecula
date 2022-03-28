@@ -39,7 +39,7 @@ public class BloodMeter : MonoBehaviour
 
     public static void StopBloodMeter(float bloodGain)
     {
-        BloodMeter.bloodMeter += bloodGain;
         BloodMeter.stopTimer = 0;
+        BloodMeter.bloodMeter += bloodGain;
     }
 }

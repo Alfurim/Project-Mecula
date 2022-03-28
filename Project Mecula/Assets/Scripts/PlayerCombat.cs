@@ -22,8 +22,18 @@ public class PlayerCombat : MonoBehaviour
         foreach(Collider enemy in hitEnemies)
         {
             Debug.Log("hit " + enemy.name);
-            Defender defender = enemy.GetComponent<Defender>();
-            defender.TakeDamage(1);
+            if (enemy.name == "Grunt1")
+            {
+                enemy.GetComponent<Grunt>().TakeDamage(1);
+            }
+            else if (enemy.name == "Defender1")
+            {
+                enemy.GetComponent<Defender>().TakeDamage(1);
+            }
+            else
+            {
+                return;
+            }
         }
     }
 

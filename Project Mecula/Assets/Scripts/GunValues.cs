@@ -21,11 +21,11 @@ public class GunValues : MonoBehaviour
         //left mouse to shoot
         if (Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+            //Shoot();
         }
     }
 
-    void Shoot()
+    /*void Shoot()
     {
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
@@ -37,5 +37,5 @@ public class GunValues : MonoBehaviour
                 target.TakeDamage(damage);
             }
         }
-    }
+    }*/
 }

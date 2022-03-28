@@ -10,6 +10,7 @@ public class GruntAI : MonoBehaviour
     public float awareAI = 10f;
     public float AIMoveSpeed;
     public float damping = 6.0f;
+    public float chaseDistance;
 
     public Transform[] navPoint;
     public UnityEngine.AI.NavMeshAgent agent;
@@ -32,15 +33,15 @@ public class GruntAI : MonoBehaviour
         if (playerDistance < awareAI)
         {
             LookAtPlayer();
-            Debug.Log("Can see player");
+            //Debug.Log("Can see player");
         }
 
         if (playerDistance < awareAI)
         {
-            if (playerDistance < 2f)
+            if (playerDistance < chaseDistance)
             {
                 Chase();
-                Debug.Log("Will chase see player");
+                //Debug.Log("Will chase see player");
             }
             else
                 GotoNextPoint();
