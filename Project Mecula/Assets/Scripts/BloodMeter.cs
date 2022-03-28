@@ -8,6 +8,7 @@ public class BloodMeter : MonoBehaviour
     public static float decreasePerSecond;
     public static float stopTimer;
     public Text bloodMeterText;
+
     void Start()
     {
         bloodMeter = 50f;
@@ -39,7 +40,7 @@ public class BloodMeter : MonoBehaviour
 
     public static void StopBloodMeter(float bloodGain)
     {
-        BloodMeter.stopTimer = 0;
-        BloodMeter.bloodMeter += bloodGain;
+        stopTimer = 0f;
+        bloodMeter += bloodGain;
     }
 }

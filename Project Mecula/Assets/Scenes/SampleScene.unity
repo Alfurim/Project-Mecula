@@ -1569,6 +1569,7 @@ GameObject:
   - component: {fileID: 550050265}
   - component: {fileID: 550050267}
   - component: {fileID: 550050266}
+  - component: {fileID: 550050268}
   m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
@@ -1592,8 +1593,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -279.12286, y: 190.23802}
-  m_SizeDelta: {x: 216.5543, y: 47.124}
+  m_AnchoredPosition: {x: -247.87134, y: 190.23802}
+  m_SizeDelta: {x: 279.0573, y: 47.124}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &550050266
 MonoBehaviour:
@@ -1637,6 +1638,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550050264}
   m_CullTransparentMesh: 1
+--- !u!114 &550050268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550050264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 301c2e589c7ec3f4fb89556110ac717c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  decreasePerSecond: 0
+  healthText: {fileID: 550050266}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
