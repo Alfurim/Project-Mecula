@@ -35,7 +35,6 @@ public class BloodMeter : MonoBehaviour
         {
             bloodMeter -= decreasePerSecond;
         }
-        Debug.Log(decreasePerSecond);
     }
 
     public static void StopBloodMeter(float bloodGain)

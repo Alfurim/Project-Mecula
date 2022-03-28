@@ -1,109 +1,65 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    float playerHeight = 2f;
-
-    [SerializeField] Transform orientation;
-
     [Header("Movement")]
-    [SerializeField] float moveSpeed = 6f;
-    [SerializeField] float airMultiplier = 0.4f;
-    float movementMultiplier = 10f;
+    public float moveSpeed;
 
-    [Header("Jumping")]
-    public float jumpForce = 5f;
+    public float groundDrag;
+
+    public float jumpForce;
+    public float jumpCooldown;
+    public float airMultiplier;
+    bool readyToJump;
+
+    [HideInInspector] public float walkSpeed;
+    [HideInInspector] public float sprintSpeed;
 
     [Header("Keybinds")]
-    [SerializeField] KeyCode jumpKey = KeyCode.Space;
+    public KeyCode jumpKey = KeyCode.Space;
 
-    [Header("Drag")]
-    [SerializeField] float groundDrag = 6f;
-    [SerializeField] float airDrag = 2f;
+    [Header("Ground Check")]
+    public Transform groundCheck;
+    public float groundDistance = 0.4f;
+    public LayerMask whatIsGround;
+    bool grounded;
 
-    float horizontalMovement;
-    float verticalMovement;
+    public Transform orientation;
 
-    [Header("Ground Detection")]
-    [SerializeField] Transform groundCheck;
-    [SerializeField] LayerMask groundMask;
-    [SerializeField] float groundDistance = 0.2f;
-    public bool isGrounded { get; private set; }
+    float horizontalInput;
+    float verticalInput;
 
     Vector3 moveDirection;
-    Vector3 slopeMoveDirection;
 
     Rigidbody rb;
 
-    RaycastHit slopeHit;
-
-    private bool OnSlope()
-    {
-        if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight / 2 + 0.5f))
-        {
-            if (slopeHit.normal != Vector3.up)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        return false;
-    }
+    [HideInInspector] public TextMeshProUGUI text_speed;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+
+        readyToJump = true;
     }
 
     private void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        // ground check
+        grounded = Physics.CheckSphere(groundCheck.position, groundDistance, whatIsGround);
 
         MyInput();
-        ControlDrag();
+        SpeedControl();
 
-        if (Input.GetKeyDown(jumpKey) && isGrounded)
-        {
-            Jump();
-        }
-
-        slopeMoveDirection = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal);
-    }
-
-    void MyInput()
-    {
-        horizontalMovement = Input.GetAxisRaw("Horizontal");
-        verticalMovement = Input.GetAxisRaw("Vertical");
-
-        moveDirection = orientation.forward * verticalMovement + orientation.right * horizontalMovement;
-    }
-
-    void Jump()
-    {
-        if (isGrounded)
-        {
-            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
-            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-        }
-    }
-
-    void ControlDrag()
-    {
-        if (isGrounded)
-        {
+        // handle drag
+        if (grounded)
             rb.drag = groundDrag;
-        }
         else
-        {
-            rb.drag = airDrag;
-        }
+            rb.drag = 0;
     }
 
     private void FixedUpdate()
@@ -111,19 +67,59 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
     }
 
-    void MovePlayer()
+    private void MyInput()
     {
-        if (isGrounded && !OnSlope())
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
+
+        // when to jump
+        if (Input.GetKey(jumpKey) && readyToJump && grounded)
         {
-            rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
+            readyToJump = false;
+
+            Jump();
+
+            Invoke(nameof(ResetJump), jumpCooldown);
         }
-        else if (isGrounded && OnSlope())
+    }
+
+    private void MovePlayer()
+    {
+        // calculate movement direction
+        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+
+        // on ground
+        if (grounded)
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+
+        // in air
+        else if (!grounded)
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+    }
+
+    private void SpeedControl()
+    {
+        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        // limit velocity if needed
+        if (flatVel.magnitude > moveSpeed)
         {
-            rb.AddForce(slopeMoveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
+            Vector3 limitedVel = flatVel.normalized * moveSpeed;
+            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
-        else if (!isGrounded)
-        {
-            rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier * airMultiplier, ForceMode.Acceleration);
-        }
+
+        //text_speed.SetText("Speed: " + flatVel.magnitude);
+    }
+
+    private void Jump()
+    {
+        // reset y velocity
+        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+    }
+    private void ResetJump()
+    {
+        readyToJump = true;
     }
 }

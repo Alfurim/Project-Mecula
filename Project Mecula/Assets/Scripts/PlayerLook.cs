@@ -4,19 +4,11 @@ using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] WallRun wallRun;
+    public float sensX;
+    public float sensY;
+    public bool invertYAxis;
 
-    [SerializeField] private float sensX = 100f;
-    [SerializeField] private float sensY = 100f;
-
-    [SerializeField] Transform cam = null;
-    [SerializeField] Transform orientation = null;
-
-    float mouseX;
-    float mouseY;
-
-    float multiplier = 0.01f;
+    public Transform orientation;
 
     float xRotation;
     float yRotation;
@@ -29,15 +21,24 @@ public class PlayerLook : MonoBehaviour
 
     private void Update()
     {
-        mouseX = Input.GetAxisRaw("Mouse X");
-        mouseY = Input.GetAxisRaw("Mouse Y");
+        // get mouse input
+        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
-        yRotation += mouseX * sensX * multiplier;
-        xRotation -= mouseY * sensY * multiplier;
+        yRotation += mouseX;
 
+        if (invertYAxis)
+        {
+            xRotation += mouseY;
+        }
+        else
+        {
+            xRotation -= mouseY;
+        }
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        cam.transform.rotation = Quaternion.Euler(xRotation, yRotation, wallRun.tilt);
-        orientation.transform.rotation = Quaternion.Euler(0, yRotation, 0);
+        // rotate cam and orientation
+        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+        orientation.rotation = Quaternion.Euler(0, yRotation, 0);
     }
 }

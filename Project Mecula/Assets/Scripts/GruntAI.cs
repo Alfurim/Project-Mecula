@@ -15,11 +15,9 @@ public class GruntAI : MonoBehaviour
     public UnityEngine.AI.NavMeshAgent agent;
     public int destPoint = 0;
     public Transform goal;
-    public static float enemyHealth;
 
     void Start()
     {
-        enemyHealth = 100;
         UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.destination = goal.position;
 
@@ -29,12 +27,6 @@ public class GruntAI : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(enemyHealth);
-
-        if (enemyHealth <= 0)
-            Destroy(gameObject);
-
-
         playerDistance = Vector3.Distance(player.position, transform.position);
 
         if (playerDistance < awareAI)
