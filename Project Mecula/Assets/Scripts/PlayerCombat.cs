@@ -7,6 +7,7 @@ public class PlayerCombat : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemy;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -22,11 +23,11 @@ public class PlayerCombat : MonoBehaviour
         foreach(Collider enemy in hitEnemies)
         {
             Debug.Log("hit " + enemy.name);
-            if (enemy.name == "Grunt1")
+            if (enemy.tag == "Grunt")
             {
                 enemy.GetComponent<Grunt>().TakeDamage(1);
             }
-            else if (enemy.name == "Defender1")
+            else if (enemy.tag == "Defender")
             {
                 enemy.GetComponent<Defender>().TakeDamage(1);
             }
