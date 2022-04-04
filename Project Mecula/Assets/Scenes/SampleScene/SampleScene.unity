@@ -2325,12 +2325,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   groundDrag: 10
-  jumpForce: 2
+  jumpForce: 1
   jumpCooldown: 0
   airMultiplier: 0.4
-  walkSpeed: 0
-  sprintSpeed: 0
+  dashForce: 1
+  dashCooldown: 3
   jumpKey: 32
+  dashKey: 304
   groundCheck: {fileID: 970585069}
   groundDistance: 0.4
   whatIsGround:

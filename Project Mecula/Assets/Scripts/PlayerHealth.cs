@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
@@ -22,8 +23,9 @@ public class PlayerHealth : MonoBehaviour
     {
         healthText.text = "Health: " + (int)currentHealth;
 
-        if (currentHealth <= 0)
+        if (currentHealth < 1)
         {
+            SceneManager.LoadScene("SampleScene");
         }
 
     }

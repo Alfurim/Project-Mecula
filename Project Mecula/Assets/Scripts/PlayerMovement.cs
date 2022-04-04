@@ -15,12 +15,13 @@ public class PlayerMovement : MonoBehaviour
     public float jumpCooldown;
     public float airMultiplier;
     bool readyToJump;
-
-    [HideInInspector] public float walkSpeed;
-    [HideInInspector] public float sprintSpeed;
+    public float dashForce;
+    public float dashCooldown;
+    bool readyToDash;
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode dashKey = KeyCode.LeftShift;
 
     [Header("Ground Check")]
     public Transform groundCheck;
@@ -72,14 +73,18 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        // when to jump
         if (Input.GetKey(jumpKey) && readyToJump && grounded)
         {
             readyToJump = false;
-
             Jump();
-
             Invoke(nameof(ResetJump), jumpCooldown);
+        }
+
+        if (Input.GetKey(dashKey) && readyToDash)
+        {
+            readyToDash = false;
+            Dash();
+            Invoke(nameof(ResetDash), dashCooldown);
         }
     }
 
@@ -121,5 +126,15 @@ public class PlayerMovement : MonoBehaviour
     private void ResetJump()
     {
         readyToJump = true;
+    }
+
+    private void Dash()
+    {
+        rb.AddForce(transform.forward * dashForce, ForceMode.Impulse);
+    }
+
+    private void ResetDash()
+    {
+        readyToDash = true;
     }
 }
