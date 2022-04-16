@@ -5,15 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fire
-  - Enemy
+  - Blood Meter
+  - Grunt
+  - Defender
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - whatIsGround
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 
