@@ -14,6 +14,10 @@ public class PlayerCombat : MonoBehaviour
         {
             Attack();
         }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+
+        }
     }
 
     void Attack()
@@ -22,20 +26,14 @@ public class PlayerCombat : MonoBehaviour
 
         foreach(Collider enemy in hitEnemies)
         {
-            Debug.Log("hit " + enemy.name);
-            if (enemy.tag == "Grunt")
-            {
-                enemy.GetComponent<Grunt>().TakeDamage(1);
-            }
-            else if (enemy.tag == "Defender")
-            {
-                enemy.GetComponent<Defender>().TakeDamage(1);
-            }
-            else
-            {
-                return;
-            }
+            enemy.GetComponent<Enemy>().TakeDamage(1);
+            Debug.Log("enemy hit");
         }
+    }
+
+    void BleedAbility()
+    {
+
     }
 
     private void OnDrawGizmosSelected()

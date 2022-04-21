@@ -2,19 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Defender : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
-    public float health = 3f;
-    public float bloodGain = 20f;
+    public static float health;
+    public static float bloodGain;
+    
 
     void Start()
     {
-
+        if (gameObject.tag == "Grunt")
+        {
+            health = 2f;
+            bloodGain = 10f;
+        }
+        if (gameObject.tag == "Defender")
+        {
+            health = 3f;
+            bloodGain = 20f;
+        }
     }
 
     void Update()
     {
-
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -31,4 +40,5 @@ public class Defender : MonoBehaviour
         }
     }
 }
+
 
