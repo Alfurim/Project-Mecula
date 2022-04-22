@@ -10,13 +10,10 @@ public class PlayerCombat : MonoBehaviour
 
     void Update()
     {
+        //attackPoint.localPosition
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Attack();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-
         }
     }
 
@@ -29,11 +26,6 @@ public class PlayerCombat : MonoBehaviour
             enemy.GetComponent<Enemy>().TakeDamage(1);
             Debug.Log("enemy hit");
         }
-    }
-
-    void BleedAbility()
-    {
-
     }
 
     private void OnDrawGizmosSelected()
