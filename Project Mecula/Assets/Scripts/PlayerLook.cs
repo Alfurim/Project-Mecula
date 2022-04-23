@@ -9,6 +9,7 @@ public class PlayerLook : MonoBehaviour
     public bool invertYAxis;
 
     public Transform orientation;
+    public GameObject player;
 
     float xRotation;
     float yRotation;
@@ -37,8 +38,8 @@ public class PlayerLook : MonoBehaviour
         }
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        // rotate cam and orientation
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+        player.transform.rotation = Quaternion.Euler(0, yRotation, 0);
     }
 }

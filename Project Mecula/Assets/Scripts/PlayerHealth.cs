@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float maxHealth;
-    public float currentHealth;
-    public float decreasePerSecond;
+    public static float maxHealth;
+    private float currentHealth;
+    private float decreasePerSecond;
     public Text healthText;
 
     // Start is called before the first frame update

@@ -10,12 +10,12 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        if (gameObject.tag == "Grunt")
+        if (gameObject.CompareTag("Grunt"))
         {
             health = 2f;
             bloodGain = 10f;
         }
-        if (gameObject.tag == "Defender")
+        if (gameObject.CompareTag("Defender"))
         {
             health = 3f;
             bloodGain = 20f;
@@ -26,10 +26,6 @@ public class Enemy : MonoBehaviour
     {
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("i have hit the player");
-    }
     public void TakeDamage(float amount)
     {
         health -= amount;

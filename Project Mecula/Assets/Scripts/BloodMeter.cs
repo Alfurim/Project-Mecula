@@ -25,7 +25,7 @@ public class BloodMeter : MonoBehaviour
         if (stopTimer < 2f)
         {
             decreasePerSecond = 0f * Time.deltaTime;
-            stopTimer = stopTimer + 1f * Time.deltaTime;
+            stopTimer += 1f * Time.deltaTime;
         }
         else
         {

@@ -5,12 +5,8 @@ using UnityEngine;
 public class PlayerAbilities : MonoBehaviour
 {
     public Transform eye;
+    public LayerMask enemyLayer;
     RaycastHit hit;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -23,14 +19,13 @@ public class PlayerAbilities : MonoBehaviour
 
     void BleedAbility()
     {
-        if (Physics.Raycast(eye.position, eye.forward, out hit, Mathf.Infinity, 6))
+        if (Physics.Raycast(eye.position, eye.forward, out hit, Mathf.Infinity, enemyLayer))
         {
             if (hit.collider.CompareTag("Defender"))
             {
                 Debug.Log("defender hit");
             }
-            Debug.Log("hit");
-        } else { Debug.Log("not hit"); }
+        }
     }
 
 }
