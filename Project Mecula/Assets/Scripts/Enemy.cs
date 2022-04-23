@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public static float health;
+    public static float defenderMaxHealth;
+    public static float gruntMaxHealth;
+    public float currentHealth;
     public static float bloodGain;
     
 
@@ -12,12 +14,14 @@ public class Enemy : MonoBehaviour
     {
         if (gameObject.CompareTag("Grunt"))
         {
-            health = 2f;
+            gruntMaxHealth = 2f;
+            currentHealth = gruntMaxHealth;
             bloodGain = 10f;
         }
         if (gameObject.CompareTag("Defender"))
         {
-            health = 3f;
+            defenderMaxHealth = 3f;
+            currentHealth = defenderMaxHealth;
             bloodGain = 20f;
         }
     }
@@ -28,8 +32,8 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        health -= amount;
-        if (health <= 0f)
+        currentHealth -= amount;
+        if (currentHealth <= 0f)
         {
             Destroy(gameObject);
             BloodMeter.StopBloodMeter(bloodGain);
