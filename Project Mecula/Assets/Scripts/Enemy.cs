@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -8,7 +6,7 @@ public class Enemy : MonoBehaviour
     public static float gruntMaxHealth;
     public float currentHealth;
     public static float bloodGain;
-    
+
 
     void Start()
     {

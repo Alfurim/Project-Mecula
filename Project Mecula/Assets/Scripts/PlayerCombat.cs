@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
@@ -19,7 +17,8 @@ public class PlayerCombat : MonoBehaviour
                 RangedAttack();
                 rangedAttackReady = false;
                 Invoke("RangedAttackReady", rangedAttackCD);
-            } else { Debug.Log("on cd"); }
+            }
+            else { Debug.Log("on cd"); }
         }
     }
 
