@@ -2273,6 +2273,7 @@ GameObject:
   - component: {fileID: 1471810163}
   - component: {fileID: 1471810166}
   - component: {fileID: 1471810167}
+  - component: {fileID: 1471810168}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2293,20 +2294,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  wallrunSpeed: 10
+  speedIncreaseMultiplier: 1.5
+  slopeIncreaseMultiplier: 2.5
   groundDrag: 10
-  jumpForce: 1
-  jumpCooldown: 0
+  jumpForce: 12
+  jumpCooldown: 0.25
   airMultiplier: 0.4
-  dashForce: 1
-  dashCooldown: 3
   jumpKey: 32
   dashKey: 304
-  groundCheck: {fileID: 970585069}
-  groundDistance: 0.4
+  playerHeight: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
+  maxSlopeAngle: 40
   orientation: {fileID: 2085749772}
+  state: 0
+  wallrunning: 0
 --- !u!54 &1471810164
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2376,6 +2380,39 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   bleedAbilityCD: 10
+--- !u!114 &1471810168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471810162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4689384779f9998489c4bf6a0b57a7fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whatIsWall:
+    serializedVersion: 2
+    m_Bits: 128
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  wallRunForce: 200
+  wallJumpUpForce: 7
+  wallJumpSideForce: 14
+  wallClimbSpeed: 1.5
+  maxWallRunTime: 4
+  jumpKey: 32
+  upwardsRunKey: 304
+  downwardsRunKey: 306
+  wallCheckDistance: 0.7
+  minJumpHeight: 2
+  exitWallTime: 0.2
+  useGravity: 0
+  gravityCounterForce: 0
+  orientation: {fileID: 2085749772}
+  cam: {fileID: 2111601632}
 --- !u!1 &1474583926
 GameObject:
   m_ObjectHideFlags: 0
