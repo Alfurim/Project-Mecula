@@ -7,13 +7,17 @@ public class PlayerAbilities : MonoBehaviour
     public Transform eye;
     public LayerMask enemyLayer;
     RaycastHit hit;
+    private bool bleedAbilityReady = true;
+    public int bleedAbilityCD = 10;
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            BleedAbility();
+            if (bleedAbilityReady)
+            {
+                BleedAbility();
+            } else { Invoke("BleedAbilityReady", bleedAbilityCD); }
         }
     }
 
@@ -21,11 +25,19 @@ public class PlayerAbilities : MonoBehaviour
     {
         if (Physics.Raycast(eye.position, eye.forward, out hit, Mathf.Infinity, enemyLayer))
         {
-            if (hit.collider.CompareTag("Defender"))
-            {
-                Debug.Log("defender hit");
-            }
+            hit.collider.gameObject.GetComponent<Enemy>().TakeDamage(1);
+            Invoke("BleedDamageTick", 2);
         }
+        bleedAbilityReady = false;
     }
 
+    void BleedDamageTick()
+    {
+        hit.collider.gameObject.GetComponent<Enemy>().TakeDamage(1);
+    }
+
+    void BleedAbilityReady()
+    {
+        bleedAbilityReady = true;
+    }
 }
