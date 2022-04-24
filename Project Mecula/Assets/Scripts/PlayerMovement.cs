@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpCooldown;
     public float airMultiplier;
     bool readyToJump;
+
     public float dashForce;
     public float dashCooldown;
     bool readyToDash;
@@ -19,8 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public KeyCode dashKey = KeyCode.LeftShift;
 
     [Header("Ground Check")]
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
+    public float playerHeight;
     public LayerMask whatIsGround;
     bool grounded;
 
@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         // ground check
-        grounded = Physics.CheckSphere(groundCheck.position, groundDistance, whatIsGround);
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 
         MyInput();
         SpeedControl();
