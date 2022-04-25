@@ -1,12 +1,11 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerCombat : MonoBehaviour
 {
     public Transform eye;
     public LayerMask enemyLayer;
     RaycastHit hit;
-    private bool rangedAttackReady = true;
+    public static bool rangedAttackReady = true;
     public int rangedAttackCD = 3;
 
     void Update()
@@ -17,7 +16,7 @@ public class PlayerCombat : MonoBehaviour
             {
                 RangedAttack();
                 rangedAttackReady = false;
-                Invoke("RangedAttackReady", rangedAttackCD);
+                Invoke(nameof(RangedAttackReady), rangedAttackCD);
             }
             else { Debug.Log("on cd"); }
         }

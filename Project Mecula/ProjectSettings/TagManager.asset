@@ -8,6 +8,8 @@ TagManager:
   - Blood Meter
   - Grunt
   - Defender
+  - Ranged Attack UI
+  - Bleed Ability UI
   layers:
   - Default
   - TransparentFX

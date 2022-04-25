@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class BloodMeter : MonoBehaviour
 {
     public static float bloodMeter;
+    public static float bloodMeterMax;
     public static float decreasePerSecond;
     public static float stopTimer;
     public Text bloodMeterText;
@@ -11,6 +12,7 @@ public class BloodMeter : MonoBehaviour
     void Start()
     {
         bloodMeter = 50f;
+        bloodMeterMax = 100f;
         decreasePerSecond = 2f * Time.deltaTime;
         stopTimer = 2f;
     }
@@ -40,6 +42,5 @@ public class BloodMeter : MonoBehaviour
     public static void StopBloodMeter(float bloodGain)
     {
         stopTimer = 0f;
-        bloodMeter += bloodGain;
     }
 }
