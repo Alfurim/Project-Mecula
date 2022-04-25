@@ -2363,23 +2363,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whatIsWall:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 136
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
   wallRunForce: 200
   wallJumpUpForce: 7
   wallJumpSideForce: 14
-  wallClimbSpeed: 1.5
-  maxWallRunTime: 4
   jumpKey: 32
-  upwardsRunKey: 304
-  downwardsRunKey: 306
   wallCheckDistance: 0.7
   minJumpHeight: 2
   exitWallTime: 0.2
-  useGravity: 1
-  gravityCounterForce: 20
+  useGravity: 0
+  gravityCounterForce: 0
   orientation: {fileID: 2085749772}
   cam: {fileID: 2111601632}
 --- !u!1 &1474583926
@@ -3770,6 +3766,7 @@ MonoBehaviour:
   invertYAxis: 0
   orientation: {fileID: 2085749772}
   player: {fileID: 1471810162}
+  camHolder: {fileID: 1532623670}
 --- !u!1 &2135510182
 GameObject:
   m_ObjectHideFlags: 0
