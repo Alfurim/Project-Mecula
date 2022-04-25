@@ -20,6 +20,7 @@ public class PlayerHealth : MonoBehaviour
     private void Update()
     {
         healthText.text = "Health: " + (int)currentHealth;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
         if (currentHealth < 1)
         {

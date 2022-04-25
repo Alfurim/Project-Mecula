@@ -24,10 +24,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-    }
-
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;

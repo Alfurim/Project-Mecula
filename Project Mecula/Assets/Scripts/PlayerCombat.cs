@@ -6,7 +6,7 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask enemyLayer;
     RaycastHit hit;
     public static bool rangedAttackReady = true;
-    public int rangedAttackCD = 3;
+    public int rangedAttackCD = 5;
 
     void Update()
     {
