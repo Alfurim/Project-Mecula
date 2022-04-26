@@ -10,6 +10,8 @@ TagManager:
   - Defender
   - Ranged Attack UI
   - Bleed Ability UI
+  - Blood Infusion UI
+  - Blood Infusion Status UI
   layers:
   - Default
   - TransparentFX

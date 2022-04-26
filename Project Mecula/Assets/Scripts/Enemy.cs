@@ -5,7 +5,7 @@ public class Enemy : MonoBehaviour
     public static float defenderMaxHealth;
     public static float gruntMaxHealth;
     public float currentHealth;
-    public static float bloodGain;
+    public float bloodGain;
 
 
     void Start()

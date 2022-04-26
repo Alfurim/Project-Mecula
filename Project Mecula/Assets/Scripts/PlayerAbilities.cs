@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerAbilities : MonoBehaviour
@@ -5,8 +6,17 @@ public class PlayerAbilities : MonoBehaviour
     public Transform eye;
     public LayerMask enemyLayer;
     RaycastHit hit;
-    public static bool bleedAbilityReady = true;
+    public static bool bleedAbilityReady;
+    public static bool bloodInfusionAbilityReady;
+    public static bool bloodInfusionAbilityActive;
     public int bleedAbilityCD = 10;
+
+    void Start()
+    {
+        bleedAbilityReady = true;
+        bloodInfusionAbilityReady = true;
+        bloodInfusionAbilityActive = false;
+    }
 
     void Update()
     {
@@ -17,6 +27,23 @@ public class PlayerAbilities : MonoBehaviour
                 BleedAbility();
                 Invoke(nameof(BleedAbilityReady), bleedAbilityCD);
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2) && PlayerHealth.currentHealth >= 11)
+        {
+            Debug.Log("hello");
+            //Debug.Log("hello");
+            if (bloodInfusionAbilityReady && !bloodInfusionAbilityActive)
+            {
+                PlayerHealth.currentHealth -= 10f;
+                bloodInfusionAbilityReady = false;
+                bloodInfusionAbilityActive = true;
+            }
+            else if (bloodInfusionAbilityReady && bloodInfusionAbilityActive)
+            {
+                return;
+            }
+            else if (!bloodInfusionAbilityReady) return;
         }
     }
 

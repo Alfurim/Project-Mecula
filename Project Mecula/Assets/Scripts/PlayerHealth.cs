@@ -4,23 +4,21 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public static float maxHealth;
-    private float currentHealth;
+    public static float currentHealth;
     private float decreasePerSecond;
     public Text healthText;
 
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = 100;
-        currentHealth = maxHealth;
+        currentHealth = 100f;
         decreasePerSecond = 1f * Time.deltaTime;
     }
 
     private void Update()
     {
         healthText.text = "Health: " + (int)currentHealth;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        currentHealth = Mathf.Clamp(currentHealth, 0, 100);
 
         if (currentHealth < 1)
         {

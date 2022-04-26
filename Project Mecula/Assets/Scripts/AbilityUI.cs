@@ -9,7 +9,7 @@ public class AbilityUI : MonoBehaviour
 
     void Update()
     {
-        if (gameObject.CompareTag("Ranged Attack UI"))
+        if (gameObject.CompareTag("Bleed Ability UI"))
         {
             if (PlayerAbilities.bleedAbilityReady == true)
             {
@@ -17,14 +17,29 @@ public class AbilityUI : MonoBehaviour
             }
             else { CombatUIText.text = "Bleed: On CD"; }
         }
-
-        else if (gameObject.CompareTag("Bleed Ability UI"))
+        else if (gameObject.CompareTag("Ranged Attack UI"))
         {
             if (PlayerCombat.rangedAttackReady == true)
             {
                 CombatUIText.text = "Ranged Attack: Ready";
             }
             else { CombatUIText.text = "Ranged Attack: Not Ready"; }
-        } 
+        }
+        else if (gameObject.CompareTag("Blood Infusion UI"))
+        {
+            if (PlayerAbilities.bloodInfusionAbilityReady == true)
+            {
+                CombatUIText.text = "Blood Infusion: Ready";
+            }
+            else { CombatUIText.text = "Blood Infusion: Not Ready"; }
+        }
+        else if (gameObject.CompareTag("Blood Infusion Status UI"))
+        {
+            if (PlayerAbilities.bloodInfusionAbilityActive == true)
+            {
+                CombatUIText.text = "Blood Infusion: Active";
+            }
+            else { CombatUIText.text = "Blood Infusion: Not Active"; }
+        }
     }
 }
