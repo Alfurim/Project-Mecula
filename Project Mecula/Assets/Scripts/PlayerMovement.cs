@@ -8,11 +8,15 @@ public class PlayerMovement : MonoBehaviour
     private float desiredMoveSpeed;
     private float lastDesiredMoveSpeed;
     public float wallrunSpeed;
-
     public float speedIncreaseMultiplier;
     public float slopeIncreaseMultiplier;
-
     public float groundDrag;
+
+    [Header("Dash")]
+    public float dashSpeed;
+    public float dashCooldown;
+    public float dashMultiplier;
+    public bool readyToDash;
 
     [Header("Jumping")]
     public float jumpForce;
@@ -60,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
         rb.freezeRotation = true;
 
         readyToJump = true;
+        readyToDash = true;
     }
 
     private void Update()
@@ -96,6 +101,15 @@ public class PlayerMovement : MonoBehaviour
             Jump();
 
             Invoke(nameof(ResetJump), jumpCooldown);
+        }
+
+        if (Input.GetKey(dashKey) && readyToDash)
+        {
+            readyToDash = false;
+            
+            Dash();
+
+            Invoke(nameof(ResetDash), dashCooldown);
         }
     }
 
@@ -172,7 +186,7 @@ public class PlayerMovement : MonoBehaviour
         // on slope
         if (OnSlope() && !exitingSlope)
         {
-            rb.AddForce(GetSlopeMoveDirection(moveDirection) * moveSpeed * 20f, ForceMode.Force);
+            rb.AddForce(20f * moveSpeed * GetSlopeMoveDirection(moveDirection), ForceMode.Force);
 
             if (rb.velocity.y > 0)
                 rb.AddForce(Vector3.down * 80f, ForceMode.Force);
@@ -180,11 +194,11 @@ public class PlayerMovement : MonoBehaviour
 
         // on ground
         else if (grounded)
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+            rb.AddForce(10f * moveSpeed * moveDirection.normalized, ForceMode.Force);
 
         // in air
         else if (!grounded)
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+            rb.AddForce(10f * airMultiplier * moveSpeed * moveDirection.normalized, ForceMode.Force);
 
         // turn gravity off while on slope
         if (!wallrunning) rb.useGravity = !OnSlope();
@@ -225,7 +239,19 @@ public class PlayerMovement : MonoBehaviour
     private void ResetJump()
     {
         readyToJump = true;
+        exitingSlope = false;
+    }
 
+    void Dash()
+    {
+        exitingSlope = true;
+
+        rb.AddForce( moveSpeed * dashMultiplier * moveDirection.normalized, ForceMode.VelocityChange);
+    }
+
+    void ResetDash()
+    {
+        readyToDash = true;
         exitingSlope = false;
     }
 
