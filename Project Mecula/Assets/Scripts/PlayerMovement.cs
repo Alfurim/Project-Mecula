@@ -12,7 +12,15 @@ public class PlayerMovement : MonoBehaviour
     public float speedIncreaseMultiplier;
     public float slopeIncreaseMultiplier;
 
+<<<<<<< HEAD
     public float groundDrag;
+=======
+    [Header("Dash")]
+    public float dashSpeed;
+    public float dashCooldown;
+    public float dashMultiplier;
+    public bool readyToDash;
+>>>>>>> parent of 20502de (aaaa)
 
     [Header("Jumping")]
     public float jumpForce;
