@@ -20,6 +20,10 @@ public class PlayerHealth : MonoBehaviour
     private void Update()
     {
         healthText.text = "Health: " + (int)currentHealth;
+<<<<<<< HEAD
+=======
+        currentHealth = Mathf.Clamp(currentHealth, 0, 100);
+>>>>>>> parent of bf2c3cf (aaa)
 
         if (currentHealth < 1)
         {
