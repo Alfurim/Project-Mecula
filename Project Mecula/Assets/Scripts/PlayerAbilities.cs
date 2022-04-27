@@ -16,27 +16,7 @@ public class PlayerAbilities : MonoBehaviour
             {
                 BleedAbility();
             }
-<<<<<<< HEAD
             else { Invoke("BleedAbilityReady", bleedAbilityCD); }
-=======
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2) && PlayerHealth.currentHealth >= 11)
-        {
-            Debug.Log("hello");
-            //Debug.Log("hello");
-            if (bloodInfusionAbilityReady && !bloodInfusionAbilityActive)
-            {
-                PlayerHealth.currentHealth -= 10f;
-                bloodInfusionAbilityReady = false;
-                bloodInfusionAbilityActive = true;
-            }
-            else if (bloodInfusionAbilityReady && bloodInfusionAbilityActive)
-            {
-                return;
-            }
-            else if (!bloodInfusionAbilityReady) return;
->>>>>>> parent of bf2c3cf (aaa)
         }
     }
 

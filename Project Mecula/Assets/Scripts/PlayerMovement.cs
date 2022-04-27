@@ -188,19 +188,11 @@ public class PlayerMovement : MonoBehaviour
 
         // on ground
         else if (grounded)
-<<<<<<< HEAD
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
 
         // in air
         else if (!grounded)
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
-=======
-            rb.AddForce(10f * moveSpeed * moveDirection.normalized, ForceMode.Force);
-
-        // in air
-        else if (!grounded)
-            rb.AddForce(10f * airMultiplier * moveSpeed * moveDirection.normalized, ForceMode.Force);
->>>>>>> parent of bf2c3cf (aaa)
 
         // turn gravity off while on slope
         if (!wallrunning) rb.useGravity = !OnSlope();

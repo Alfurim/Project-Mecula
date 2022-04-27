@@ -532,12 +532,6 @@ RectTransform:
   - {fileID: 550050265}
   - {fileID: 107525289}
   - {fileID: 1534994043}
-<<<<<<< HEAD
-=======
-  - {fileID: 1287569240}
-  - {fileID: 1157133127}
-  - {fileID: 1267455169}
->>>>>>> parent of bf2c3cf (aaa)
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -734,11 +728,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c08f0015018e3c4d8d8fd4f187542e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-=======
-  rageActive: 0
-  rageTimer: 0
->>>>>>> parent of bf2c3cf (aaa)
   bloodMeterText: {fileID: 107525290}
 --- !u!1 &226519453
 GameObject:
@@ -1986,7 +1975,6 @@ Transform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 --- !u!1 &1008571880
 GameObject:
@@ -2068,8 +2056,6 @@ CanvasRenderer:
   m_GameObject: {fileID: 1008571880}
   m_CullTransparentMesh: 1
 >>>>>>> parent of 20502de (aaaa)
-=======
->>>>>>> parent of bf2c3cf (aaa)
 --- !u!1 &1038004081
 GameObject:
   m_ObjectHideFlags: 0
@@ -2366,15 +2352,12 @@ MonoBehaviour:
   slopeIncreaseMultiplier: 2.5
   groundDrag: 10
 <<<<<<< HEAD
-<<<<<<< HEAD
   jumpForce: 12
 =======
   dashSpeed: 40
   dashCooldown: 3
   dashMultiplier: 25
   readyToDash: 0
-=======
->>>>>>> parent of bf2c3cf (aaa)
   jumpForce: 16
 >>>>>>> parent of 20502de (aaaa)
   jumpCooldown: 0.25
