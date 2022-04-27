@@ -8,8 +8,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{BDD95ECD-2C40-37E9-630D-F9F4C4D943D7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -70,6 +69,7 @@
     <Compile Include="Assets\Scripts\DefenderAI.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\RageUI.cs" />
+    <Compile Include="Assets\Scripts\DashUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -642,10 +642,6 @@
     <ProjectReference Include="Unity.VisualScripting.Flow.Player.csproj">
       <Project>{33F7B63F-84BE-9B17-7A43-75353DB3B979}</Project>
       <Name>Unity.VisualScripting.Flow.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{467E5A9C-8EF8-90B4-9860-9E8A6C1DD79E}</Project>
-      <Name>UnityEngine.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
       <Project>{96141B3D-517D-838A-587E-65D21AE47508}</Project>

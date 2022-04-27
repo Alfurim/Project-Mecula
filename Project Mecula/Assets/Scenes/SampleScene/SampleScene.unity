@@ -2236,6 +2236,7 @@ GameObject:
   - component: {fileID: 1008571881}
   - component: {fileID: 1008571883}
   - component: {fileID: 1008571882}
+  - component: {fileID: 1008571884}
   m_Layer: 5
   m_Name: Dash UI
   m_TagString: Untagged
@@ -2259,8 +2260,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -231.76001, y: 13}
+  m_SizeDelta: {x: 314.48, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1008571882
 MonoBehaviour:
@@ -2304,6 +2305,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1008571880}
   m_CullTransparentMesh: 1
+--- !u!114 &1008571884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008571880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331747ea62f52514e92776af8dfcfd56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashText: {fileID: 1008571882}
 --- !u!1 &1038004081
 GameObject:
   m_ObjectHideFlags: 0
@@ -2881,7 +2895,6 @@ MonoBehaviour:
   dashSpeed: 40
   dashCooldown: 3
   dashMultiplier: 25
-  readyToDash: 0
   jumpForce: 16
   jumpCooldown: 0.25
   airMultiplier: 0.4

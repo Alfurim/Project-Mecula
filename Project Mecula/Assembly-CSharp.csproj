@@ -69,7 +69,7 @@
     <Compile Include="Assets\Scripts\DefenderAI.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\RageUI.cs" />
-    <Compile Include="Assets\Scripts\Dash UI.cs" />
+    <Compile Include="Assets\Scripts\DashUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

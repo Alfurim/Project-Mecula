@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public float dashSpeed;
     public float dashCooldown;
     public float dashMultiplier;
-    public bool readyToDash;
+    public static bool readyToDash;
 
     [Header("Jumping")]
     public float jumpForce;

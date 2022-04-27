@@ -6,13 +6,7 @@ using UnityEngine.UI;
 public class RageUI : MonoBehaviour
 {
     public Text rageText;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         if (BloodMeter.rageActive)
@@ -20,6 +14,5 @@ public class RageUI : MonoBehaviour
             rageText.text = "Rage: Active";
         }
         else { rageText.text = "Rage: Inactive"; }
-
     }
 }
