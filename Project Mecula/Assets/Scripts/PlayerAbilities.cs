@@ -31,8 +31,6 @@ public class PlayerAbilities : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha2) && PlayerHealth.currentHealth >= 11)
         {
-            Debug.Log("hello");
-            //Debug.Log("hello");
             if (bloodInfusionAbilityReady && !bloodInfusionAbilityActive)
             {
                 PlayerHealth.currentHealth -= 10f;

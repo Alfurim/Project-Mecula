@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     private RaycastHit slopeHit;
     private bool exitingSlope;
 
+    public float rageMultiplier;
 
     public Transform orientation;
 
@@ -184,22 +185,30 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
         // on slope
-        if (OnSlope() && !exitingSlope)
+        if (OnSlope() && !exitingSlope && !BloodMeter.rageActive)
         {
             rb.AddForce(20f * moveSpeed * GetSlopeMoveDirection(moveDirection), ForceMode.Force);
 
             if (rb.velocity.y > 0)
                 rb.AddForce(Vector3.down * 80f, ForceMode.Force);
         }
+        else if (OnSlope() && !exitingSlope && BloodMeter.rageActive)
+        {
+            rb.AddForce(20f * moveSpeed * rageMultiplier * GetSlopeMoveDirection(moveDirection), ForceMode.Force);
 
+            if (rb.velocity.y > 0)
+                rb.AddForce(Vector3.down * 80f, ForceMode.Force);
+        }
         // on ground
-        else if (grounded)
+        else if (grounded && !BloodMeter.rageActive)
             rb.AddForce(10f * moveSpeed * moveDirection.normalized, ForceMode.Force);
-
+        else if (grounded && BloodMeter.rageActive)
+            rb.AddForce(10f * moveSpeed * rageMultiplier * moveDirection.normalized, ForceMode.Force);
         // in air
-        else if (!grounded)
+        else if (!grounded && !BloodMeter.rageActive)
             rb.AddForce(10f * airMultiplier * moveSpeed * moveDirection.normalized, ForceMode.Force);
-
+        else if (!grounded && BloodMeter.rageActive)
+            rb.AddForce(10f * airMultiplier * moveSpeed * rageMultiplier * moveDirection.normalized, ForceMode.Force);
         // turn gravity off while on slope
         if (!wallrunning) rb.useGravity = !OnSlope();
     }
@@ -207,22 +216,38 @@ public class PlayerMovement : MonoBehaviour
     private void SpeedControl()
     {
         // limiting speed on slope
-        if (OnSlope() && !exitingSlope)
+        if (OnSlope() && !exitingSlope && !BloodMeter.rageActive)
         {
             if (rb.velocity.magnitude > moveSpeed)
                 rb.velocity = rb.velocity.normalized * moveSpeed;
+        }
+        else if (OnSlope() && !exitingSlope && BloodMeter.rageActive)
+        {
+            if (rb.velocity.magnitude > moveSpeed * rageMultiplier)
+                rb.velocity = moveSpeed * rageMultiplier * rb.velocity.normalized;
         }
 
         // limiting speed on ground or in air
         else
         {
             Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-
-            // limit velocity if needed
-            if (flatVel.magnitude > moveSpeed)
+            if (!BloodMeter.rageActive)
             {
-                Vector3 limitedVel = flatVel.normalized * moveSpeed;
-                rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+                // limit velocity if needed
+                if (flatVel.magnitude > moveSpeed)
+                {
+                    Vector3 limitedVel = flatVel.normalized * moveSpeed;
+                    rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+                }
+            }
+            else
+            {
+                // limit velocity if needed
+                if (flatVel.magnitude > moveSpeed * rageMultiplier)
+                {
+                    Vector3 limitedVel = moveSpeed * rageMultiplier * flatVel.normalized;
+                    rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+                }
             }
         }
     }

@@ -6,9 +6,10 @@ public class BloodMeter : MonoBehaviour
     public static float bloodMeter;
     public static float decreasePerSecond;
     public static float stopTimer;
-    public bool rageActive;
+    public static bool rageActive;
     public float rageTimer;
-    public Text bloodMeterText;
+
+    public Slider slider;
 
     void Start()
     {
@@ -16,23 +17,25 @@ public class BloodMeter : MonoBehaviour
         decreasePerSecond = 2f * Time.deltaTime;
         stopTimer = 2f;
         rageTimer = 5f;
+        slider.value = bloodMeter;
+        slider.maxValue = 100f;
     }
 
     void Update()
     {
-        bloodMeterText.text = "Blood Meter: " + (int)bloodMeter;
         bloodMeter = Mathf.Clamp(bloodMeter, 0, 100);
         stopTimer = Mathf.Clamp(stopTimer, 0, 2);
+        slider.value = bloodMeter;
 
         if (bloodMeter >= 100f && Input.GetKeyDown(KeyCode.Q))
         {
             RageActivate();
         }
 
-        /*if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             bloodMeter += 40f;
-        }*/
+        }
     }
 
     private void FixedUpdate()
@@ -56,8 +59,6 @@ public class BloodMeter : MonoBehaviour
         {
             bloodMeter -= decreasePerSecond;
         }
-
-        
     }
 
     public static void StopBloodMeter(float bloodGain)
