@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class DefenderAI : MonoBehaviour
+public class EnemyAI : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Transform player;
+    public bool playerSighted = false;
 
     public LayerMask whatIsGround, whatIsPlayer;
 
@@ -40,15 +41,22 @@ public class DefenderAI : MonoBehaviour
 
     private void Patroling()
     {
-        if (!walkPointSet) SearchWalkPoint();
+        if (playerSighted == false)
+        {
+            if (!walkPointSet) SearchWalkPoint();
 
-        if (walkPointSet)
-            agent.SetDestination(walkPoint);
+            if (walkPointSet)
+                agent.SetDestination(walkPoint);
 
-        Vector3 distanceToWalkPoint = transform.position - walkPoint;
+            Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
-        if (distanceToWalkPoint.magnitude < 1f)
-            walkPointSet = false;
+            if (distanceToWalkPoint.magnitude < 1f)
+                walkPointSet = false;
+        }
+        else
+        {
+            agent.SetDestination(player.position);
+        }
     }
     private void SearchWalkPoint()
     {
@@ -63,11 +71,13 @@ public class DefenderAI : MonoBehaviour
 
     private void ChasePlayer()
     {
+        playerSighted = true;
         agent.SetDestination(player.position);
     }
 
     private void AttackPlayer()
     {
+        playerSighted = true;
         agent.SetDestination(transform.position);
 
         transform.LookAt(player);
@@ -76,7 +86,6 @@ public class DefenderAI : MonoBehaviour
         {
             Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);

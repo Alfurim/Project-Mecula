@@ -20,7 +20,7 @@ public class PlayerAbilities : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1) && BloodMeter.bloodMeter >= 25)
         {
             if (bleedAbilityReady)
             {
@@ -30,7 +30,7 @@ public class PlayerAbilities : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2) && PlayerHealth.currentHealth >= 11)
+        if (Input.GetKeyDown(KeyCode.Alpha2) && PlayerHealth.currentHealth >= 11 && BloodMeter.bloodMeter >= 5)
         {
             if (bloodInfusionAbilityReady && !bloodInfusionAbilityActive)
             {
@@ -51,7 +51,7 @@ public class PlayerAbilities : MonoBehaviour
     {
         if (Physics.Raycast(eye.position, eye.forward, out hit, Mathf.Infinity, enemyLayer))
         {
-            hit.collider.gameObject.GetComponent<DefenderAI>().TakeDamage(1);
+            hit.collider.gameObject.GetComponent<EnemyAI>().TakeDamage(1);
             Invoke(nameof(BleedDamageTick), 2);
             Debug.Log("hit, bleed started");
         }
@@ -60,7 +60,7 @@ public class PlayerAbilities : MonoBehaviour
 
     void BleedDamageTick()
     {
-        hit.collider.gameObject.GetComponent<Enemy>().TakeDamage(1);
+        hit.collider.gameObject.GetComponent<EnemyAI>().TakeDamage(1);
     }
 
     void BleedAbilityReady()

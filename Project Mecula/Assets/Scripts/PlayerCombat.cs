@@ -38,7 +38,7 @@ public class PlayerCombat : MonoBehaviour
     {
         if (Physics.Raycast(eye.position, eye.forward, out hit, Mathf.Infinity, enemyLayer))
         {
-            hit.collider.gameObject.GetComponent<DefenderAI>().TakeDamage(damage);
+            hit.collider.gameObject.GetComponent<EnemyAI>().TakeDamage(damage);
         }
     }
 
