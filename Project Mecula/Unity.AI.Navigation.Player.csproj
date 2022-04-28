@@ -57,8 +57,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.0.0-exp.4\Runtime\HelpUrls.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.0.0-exp.4\Runtime\NavMeshLink.cs" />
     <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.0.0-exp.4\Runtime\NavMeshModifierVolume.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.0.0-exp.4\Runtime\NavMeshLink.cs" />
     <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.0.0-exp.4\Runtime\NavMeshSurface.cs" />
     <Compile Include="Library\PackageCache\com.unity.ai.navigation@1.0.0-exp.4\Runtime\NavMeshModifier.cs" />
   </ItemGroup>

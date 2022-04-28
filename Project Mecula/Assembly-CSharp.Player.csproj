@@ -58,16 +58,15 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\PlayerCombat.cs" />
     <Compile Include="Assets\Scripts\PlayerLook.cs" />
-    <Compile Include="Assets\Scripts\RageUI.cs" />
     <Compile Include="Assets\Scripts\MoveCamera.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\PlayerAbilities.cs" />
+    <Compile Include="Assets\Scripts\RangedAttackUI.cs" />
     <Compile Include="Assets\Scripts\WallRunning.cs" />
     <Compile Include="Assets\Scripts\BloodMeter.cs" />
-    <Compile Include="Assets\Scripts\EnemyAI.cs" />
-    <Compile Include="Assets\Scripts\DashUI.cs" />
-    <Compile Include="Assets\Scripts\AbilityUI.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\EnemyAI.cs" />
+    <Compile Include="Assets\Scripts\AbilityUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_Creepy_Cat\_Docs\Doc.txt" />
@@ -636,10 +635,6 @@
       <Project>{0E889AB7-99A5-68CB-33D9-485A53EBBAE2}</Project>
       <Name>Unity.TextMeshPro.Player</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.AI.Navigation.Player.csproj">
-      <Project>{42BC517A-BE85-5F38-0054-92BBF5F65AC2}</Project>
-      <Name>Unity.AI.Navigation.Player</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.ProBuilder.Player.csproj">
       <Project>{21DC2859-2BAB-7063-DAA2-572561A1AB95}</Project>
       <Name>Unity.ProBuilder.Player</Name>
@@ -659,6 +654,10 @@
     <ProjectReference Include="Unity.VisualScripting.Core.Player.csproj">
       <Project>{0B25D878-E542-AA24-9995-F9E9E99D9A56}</Project>
       <Name>Unity.VisualScripting.Core.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.Player.csproj">
+      <Project>{42BC517A-BE85-5F38-0054-92BBF5F65AC2}</Project>
+      <Name>Unity.AI.Navigation.Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
