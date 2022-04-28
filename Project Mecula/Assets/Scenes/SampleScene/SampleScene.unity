@@ -2398,10 +2398,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1471810162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8e425702a905842bc047fc16b6cda3, type: 3}
+  m_Script: {fileID: 11500000, guid: 27b6c70fb34875041b846c0aa8dc1384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eye: {fileID: 1938769947}
+  eye: {fileID: 0}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -2415,22 +2415,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1471810162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4689384779f9998489c4bf6a0b57a7fa, type: 3}
+  m_Script: {fileID: 11500000, guid: f6ce502c4ce026243b9d1571fc583b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   whatIsWall:
     serializedVersion: 2
-    m_Bits: 136
+    m_Bits: 128
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
   wallRunForce: 200
-  wallJumpUpForce: 10
+  wallJumpUpForce: 7
   wallJumpSideForce: 14
   jumpKey: 32
   wallCheckDistance: 0.7
-  minJumpHeight: 2
-  exitWallTime: 0.2
+  minJumpHeight: 0
+  exitWallTime: 0
   useGravity: 0
   gravityCounterForce: 0
   orientation: {fileID: 2085749772}
@@ -3183,7 +3183,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ef39dcaed44ca6b4c975cd2bbd8d035d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ec1970599d8f3cb4789a9b9c51cc8304, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3309,7 +3309,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1908616061}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04e53fca48c407141a6c1a9ef2c0c302, type: 3}
+  m_Script: {fileID: 11500000, guid: b8b94388f4c713146a047b9e3affa41b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 1908616068}
@@ -3328,7 +3328,7 @@ MonoBehaviour:
   timeBetweenAttacks: 2
   projectile: {fileID: 1993876970}
   sightRange: 15
-  attackRange: 8
+  attackRange: 10
   playerInSightRange: 0
   playerInAttackRange: 0
 --- !u!195 &1908616068
@@ -3383,7 +3383,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1914711730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04e53fca48c407141a6c1a9ef2c0c302, type: 3}
+  m_Script: {fileID: 11500000, guid: b8b94388f4c713146a047b9e3affa41b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 1914711732}
@@ -3562,7 +3562,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ef39dcaed44ca6b4c975cd2bbd8d035d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ec1970599d8f3cb4789a9b9c51cc8304, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
