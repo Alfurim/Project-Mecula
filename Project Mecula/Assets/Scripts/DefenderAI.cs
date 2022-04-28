@@ -1,75 +1,117 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class DefenderAI : MonoBehaviour
 {
-
+    public NavMeshAgent agent;
     public Transform player;
-    public float playerDistance;
-    public float awareAI = 10f;
-    public float AIMoveSpeed;
-    public float damping = 6.0f;
-    public float chaseDistance;
 
-    public Transform[] navPoint;
-    public UnityEngine.AI.NavMeshAgent agent;
-    public int destPoint = 0;
-    public Transform goal;
+    public LayerMask whatIsGround, whatIsPlayer;
 
-    void Start()
+    public float health;
+    public float bloodGain;
+
+    //Patroling
+    public Vector3 walkPoint;
+    bool walkPointSet;
+    public float walkPointRange;
+
+    //Attacking
+    public float timeBetweenAttacks;
+    bool alreadyAttacked;
+    public GameObject projectile;
+
+    //States
+    public float sightRange, attackRange;
+    public bool playerInSightRange, playerInAttackRange;
+
+    private void Awake()
     {
-        UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        agent.destination = goal.position;
-
-        agent.autoBraking = false;
-
+        player = GameObject.Find("Player").transform;
+        agent = GetComponent<NavMeshAgent>();
     }
 
-    void Update()
+    private void Update()
     {
-        playerDistance = Vector3.Distance(player.position, transform.position);
+        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (playerDistance < awareAI)
-        {
-            LookAtPlayer();
-            //Debug.Log("Can see player");
-        }
-
-        if (playerDistance < awareAI)
-        {
-            if (playerDistance < chaseDistance)
-            {
-                Chase();
-                //Debug.Log("Will chase see player");
-            }
-            else
-                GotoNextPoint();
-        }
-
-
-        if (agent.remainingDistance < 0.5f)
-            GotoNextPoint();
-
+        if (!playerInSightRange && !playerInAttackRange) Patroling();
+        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+        if (playerInAttackRange && playerInSightRange) AttackPlayer();
     }
 
-    void LookAtPlayer()
+    private void Patroling()
     {
+        if (!walkPointSet) SearchWalkPoint();
+
+        if (walkPointSet)
+            agent.SetDestination(walkPoint);
+
+        Vector3 distanceToWalkPoint = transform.position - walkPoint;
+
+        //Walkpoint reached
+        if (distanceToWalkPoint.magnitude < 1f)
+            walkPointSet = false;
+    }
+    private void SearchWalkPoint()
+    {
+        //Calculate random point in range
+        float randomZ = Random.Range(-walkPointRange, walkPointRange);
+        float randomX = Random.Range(-walkPointRange, walkPointRange);
+
+        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+
+        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
+            walkPointSet = true;
+    }
+
+    private void ChasePlayer()
+    {
+        agent.SetDestination(player.position);
+    }
+
+    private void AttackPlayer()
+    {
+        agent.SetDestination(transform.position);
+
         transform.LookAt(player);
+
+        if (!alreadyAttacked)
+        {
+            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+
+            alreadyAttacked = true;
+            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+        }
     }
-
-
-    void GotoNextPoint()
+    private void ResetAttack()
     {
-        if (navPoint.Length == 0)
-            return;
-        agent.destination = navPoint[destPoint].position;
-        destPoint = (destPoint + 1) % navPoint.Length;
+        alreadyAttacked = false;
     }
 
-
-    void Chase()
+    public void TakeDamage(int damage)
     {
-        transform.Translate(Vector3.forward * AIMoveSpeed * Time.deltaTime);
+        health -= damage;
+
+        if (health <= 0)
+        {
+            BloodMeter.StopBloodMeter(bloodGain);
+            Invoke(nameof(DestroyEnemy), 0.5f);
+        }
+    }
+    private void DestroyEnemy()
+    {
+        Destroy(gameObject);
     }
 
-
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, sightRange);
+    }
 }

@@ -25,6 +25,7 @@ public class PlayerAbilities : MonoBehaviour
             if (bleedAbilityReady)
             {
                 BleedAbility();
+                BloodMeter.bloodMeter -= 25;
                 Invoke(nameof(BleedAbilityReady), bleedAbilityCD);
             }
         }
@@ -34,6 +35,7 @@ public class PlayerAbilities : MonoBehaviour
             if (bloodInfusionAbilityReady && !bloodInfusionAbilityActive)
             {
                 PlayerHealth.currentHealth -= 10f;
+                BloodMeter.bloodMeter -= 5;
                 bloodInfusionAbilityReady = false;
                 bloodInfusionAbilityActive = true;
             }
@@ -49,7 +51,7 @@ public class PlayerAbilities : MonoBehaviour
     {
         if (Physics.Raycast(eye.position, eye.forward, out hit, Mathf.Infinity, enemyLayer))
         {
-            hit.collider.gameObject.GetComponent<Enemy>().TakeDamage(1);
+            hit.collider.gameObject.GetComponent<DefenderAI>().TakeDamage(1);
             Invoke(nameof(BleedDamageTick), 2);
             Debug.Log("hit, bleed started");
         }

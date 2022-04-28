@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\PlayerCombat.cs" />
     <Compile Include="Assets\Scripts\PlayerLook.cs" />
     <Compile Include="Assets\Scripts\PlayerAbilities.cs" />
+    <Compile Include="Assets\Scripts\RageUI.cs" />
     <Compile Include="Assets\Scripts\MoveCamera.cs" />
     <Compile Include="Assets\Scripts\WallRunning.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
@@ -68,7 +69,6 @@
     <Compile Include="Assets\Scripts\AbilityUI.cs" />
     <Compile Include="Assets\Scripts\DefenderAI.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\RageUI.cs" />
     <Compile Include="Assets\Scripts\DashUI.cs" />
   </ItemGroup>
   <ItemGroup>
