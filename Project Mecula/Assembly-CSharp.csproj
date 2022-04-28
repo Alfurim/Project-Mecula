@@ -753,6 +753,14 @@
       <Project>{AAD7DBFA-59C0-A6B5-4820-A7478FD362A2}</Project>
       <Name>Unity.VisualScripting.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.csproj">
+      <Project>{83FAF3FA-8E74-31AE-E3A7-87A7757E7C05}</Project>
+      <Name>Unity.AI.Navigation</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.Editor.csproj">
+      <Project>{B31ACFCE-89EE-09AA-8483-A8066DEC0407}</Project>
+      <Name>Unity.AI.Navigation.Editor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

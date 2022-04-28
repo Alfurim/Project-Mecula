@@ -655,6 +655,10 @@
       <Project>{0B25D878-E542-AA24-9995-F9E9E99D9A56}</Project>
       <Name>Unity.VisualScripting.Core.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.Player.csproj">
+      <Project>{42BC517A-BE85-5F38-0054-92BBF5F65AC2}</Project>
+      <Name>Unity.AI.Navigation.Player</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
