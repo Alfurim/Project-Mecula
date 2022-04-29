@@ -6,7 +6,7 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask enemyLayer;
     RaycastHit hit;
     public static bool rangedAttackReady;
-    public int rangedAttackCD = 5;
+    public int rangedAttackCD;
 
     private void Start()
     {
@@ -53,5 +53,12 @@ public class PlayerCombat : MonoBehaviour
     void RangedAttackReady()
     {
         rangedAttackReady = true;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Vector3 direction = eye.TransformDirection(Vector3.forward) * 5;
+        Gizmos.DrawRay(transform.position, direction);
     }
 }

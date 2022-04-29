@@ -39,6 +39,9 @@ public class PlayerMovement : MonoBehaviour
     private bool exitingSlope;
 
     public float rageMultiplier;
+    public bool key1PickedUp = false;
+    public bool key2PickedUp = false;
+    public bool key3PickedUp = false;
 
     public Transform orientation;
 
@@ -302,5 +305,34 @@ public class PlayerMovement : MonoBehaviour
     {
         float mult = Mathf.Pow(10.0f, (float)digits);
         return Mathf.Round(value * mult) / mult;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (gameObject.CompareTag("Player") && other.gameObject.CompareTag("Health Pack"))
+        {
+            PlayerHealth.currentHealth += 50;
+            Destroy(other.gameObject);
+        }
+        else if (gameObject.CompareTag("Player") && other.gameObject.CompareTag("Blood Pack"))
+        {
+            BloodMeter.bloodMeter += 50;
+            Destroy(other.gameObject);
+        }
+        else if (gameObject.CompareTag("Player") && other.gameObject.CompareTag("Key1"))
+        {
+            Destroy(other.gameObject);
+            Destroy(GameObject.FindGameObjectWithTag("Key1"));
+        }
+        else if (gameObject.CompareTag("Player") && other.gameObject.CompareTag("Key2"))
+        {
+            Destroy(other.gameObject);
+            Destroy(GameObject.FindGameObjectWithTag("Key2"));
+        }
+        else if (gameObject.CompareTag("Player") && other.gameObject.CompareTag("Key3"))
+        {
+            Destroy(other.gameObject);
+            Destroy(GameObject.FindGameObjectWithTag("Key3"));
+        }
     }
 }

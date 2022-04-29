@@ -15,6 +15,11 @@ TagManager:
   - Wall
   - Ground
   - Enemy
+  - Health Pack
+  - Blood Pack
+  - Key1
+  - Key2
+  - Key3
   layers:
   - Default
   - TransparentFX
