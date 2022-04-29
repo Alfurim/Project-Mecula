@@ -920,7 +920,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 351592041}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ff9e21cea7ab6b4fa73ba95bc825671, type: 3}
+  m_Script: {fileID: 11500000, guid: c72de0b534bbc0a41bc3fd0fef308acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   whatIsWall:
@@ -929,9 +929,6 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
-  whatIsEnemy:
-    serializedVersion: 2
-    m_Bits: 64
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 256
@@ -1849,7 +1846,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 887630469}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd450ca2e885f354a94a7b7262054207, type: 3}
+  m_Script: {fileID: 11500000, guid: 7100296c4f8f98a4ca9dd64b06b519bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rageText: {fileID: 887630471}
@@ -1942,7 +1939,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1008571880}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76ce0abd0e123c24984bb798bfd914f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 986abfbcd9f15174abf1955b868c67d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dashText: {fileID: 1008571882}
@@ -2720,8 +2717,8 @@ MonoBehaviour:
   wallJumpSideForce: 14
   jumpKey: 32
   wallCheckDistance: 0.7
-  minJumpHeight: 0
-  exitWallTime: 0
+  minJumpHeight: 2
+  exitWallTime: 0.2
   useGravity: 0
   gravityCounterForce: 0
   orientation: {fileID: 2085749772}
@@ -3475,7 +3472,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 64407a54b41c6e142bfaa9d446b0f6f1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d07ac17b75bdea94b8d9bff730a5af26, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3854,7 +3851,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 64407a54b41c6e142bfaa9d446b0f6f1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d07ac17b75bdea94b8d9bff730a5af26, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4121,7 +4118,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1993876970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ff9e21cea7ab6b4fa73ba95bc825671, type: 3}
+  m_Script: {fileID: 11500000, guid: c72de0b534bbc0a41bc3fd0fef308acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   whatIsWall:
@@ -4130,9 +4127,6 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
-  whatIsEnemy:
-    serializedVersion: 2
-    m_Bits: 64
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 256

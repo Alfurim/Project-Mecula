@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public LayerMask whatIsWall, whatIsGround, whatIsEnemy, whatIsPlayer;
+    public LayerMask whatIsWall, whatIsGround, whatIsPlayer;
     public float bulletDamage;
 
     private void OnCollisionEnter(Collision collision)
