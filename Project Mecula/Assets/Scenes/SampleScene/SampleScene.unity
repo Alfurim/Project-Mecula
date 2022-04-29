@@ -573,7 +573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.08235294, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1224,7 +1224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.003921569, g: 0.9960785, b: 0.08627451, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1672,7 +1672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.003921569, g: 0.9960785, b: 0.08627451, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1710,7 +1710,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 887630469}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a73765e6f2b1e24699cba49571003c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 6608e39f586354347a8ad4faa6143f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rageText: {fileID: 887630471}
@@ -1749,7 +1749,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -231.76001, y: 13}
+  m_AnchoredPosition: {x: -231.76003, y: 103}
   m_SizeDelta: {x: 314.48, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1008571882
@@ -1765,7 +1765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.08235294, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1803,7 +1803,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1008571880}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 331747ea62f52514e92776af8dfcfd56, type: 3}
+  m_Script: {fileID: 11500000, guid: a4b13c6826cc8f94bb30fe1fbd3ab4b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dashText: {fileID: 1008571882}
@@ -1895,7 +1895,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1157133126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 939c419d8108fca49bc0df97fdd0d353, type: 3}
+  m_Script: {fileID: 11500000, guid: 89023a1a163219a45b4e2a651a3f319b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CombatUIText: {fileID: 1157133129}
@@ -1912,7 +1912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.003921569, g: 0.9960785, b: 0.08627451, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1986,7 +1986,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 15dc3fa76cf007c40bf9dfbd223360f4, type: 2}
+  m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
 --- !u!4 &1213623220
 Transform:
@@ -2049,7 +2049,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1267455168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 939c419d8108fca49bc0df97fdd0d353, type: 3}
+  m_Script: {fileID: 11500000, guid: 89023a1a163219a45b4e2a651a3f319b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CombatUIText: {fileID: 1267455171}
@@ -2066,7 +2066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.003921569, g: 0.9960785, b: 0.08627451, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2130,7 +2130,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -231.95001, y: 103.00001}
+  m_AnchoredPosition: {x: -232.05002, y: 12.999998}
   m_SizeDelta: {x: 314.86, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1287569241
@@ -2146,7 +2146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.003921569, g: 0.9960785, b: 0.08627451, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2184,7 +2184,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1287569239}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 939c419d8108fca49bc0df97fdd0d353, type: 3}
+  m_Script: {fileID: 11500000, guid: 89023a1a163219a45b4e2a651a3f319b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CombatUIText: {fileID: 1287569241}
@@ -2322,9 +2322,9 @@ MonoBehaviour:
   speedIncreaseMultiplier: 1.5
   slopeIncreaseMultiplier: 2.5
   groundDrag: 10
-  dashSpeed: 40
+  dashSpeed: 10
   dashCooldown: 3
-  dashMultiplier: 25
+  dashMultiplier: 40
   jumpForce: 16
   jumpCooldown: 0.25
   airMultiplier: 0.4
@@ -2401,7 +2401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b6c70fb34875041b846c0aa8dc1384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eye: {fileID: 0}
+  eye: {fileID: 1938769947}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -2660,7 +2660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.003921569, g: 0.9960785, b: 0.08627451, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2700,7 +2700,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1534994042}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 939c419d8108fca49bc0df97fdd0d353, type: 3}
+  m_Script: {fileID: 11500000, guid: 89023a1a163219a45b4e2a651a3f319b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CombatUIText: {fileID: 1534994044}
@@ -3183,7 +3183,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ec1970599d8f3cb4789a9b9c51cc8304, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 539780b964d563d429696ef8db0b79d3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3309,7 +3309,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1908616061}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8b94388f4c713146a047b9e3affa41b, type: 3}
+  m_Script: {fileID: 11500000, guid: 594f1b3d59e18774b980ce88d019cc78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 1908616068}
@@ -3324,7 +3324,7 @@ MonoBehaviour:
   health: 3
   bloodGain: 45
   walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 10
+  walkPointRange: 5
   timeBetweenAttacks: 2
   projectile: {fileID: 1993876970}
   sightRange: 15
@@ -3383,7 +3383,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1914711730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8b94388f4c713146a047b9e3affa41b, type: 3}
+  m_Script: {fileID: 11500000, guid: 594f1b3d59e18774b980ce88d019cc78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 1914711732}
@@ -3562,7 +3562,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ec1970599d8f3cb4789a9b9c51cc8304, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 539780b964d563d429696ef8db0b79d3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

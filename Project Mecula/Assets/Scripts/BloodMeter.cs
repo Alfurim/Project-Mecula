@@ -35,6 +35,7 @@ public class BloodMeter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             bloodMeter += 40f;
+            stopTimer = 0f;
         }
     }
 

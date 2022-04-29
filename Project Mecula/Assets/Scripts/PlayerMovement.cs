@@ -109,8 +109,10 @@ public class PlayerMovement : MonoBehaviour
             readyToDash = false;
             
             Dash();
-
-            Invoke(nameof(ResetDash), dashCooldown);
+            if (!BloodMeter.rageActive)
+            {
+                Invoke(nameof(ResetDash), dashCooldown);
+            } else { Invoke(nameof(ResetDash), dashCooldown / 2); }
         }
     }
 

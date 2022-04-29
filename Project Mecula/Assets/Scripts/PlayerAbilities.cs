@@ -20,7 +20,7 @@ public class PlayerAbilities : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) && BloodMeter.bloodMeter >= 25)
+        if (Input.GetKeyDown(KeyCode.Alpha1) && BloodMeter.bloodMeter >= 25 && !BloodMeter.rageActive)
         {
             if (bleedAbilityReady)
             {
@@ -30,7 +30,7 @@ public class PlayerAbilities : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2) && PlayerHealth.currentHealth >= 11 && BloodMeter.bloodMeter >= 5)
+        if (Input.GetKeyDown(KeyCode.Alpha2) && PlayerHealth.currentHealth >= 11 && BloodMeter.bloodMeter >= 5 && !BloodMeter.rageActive)
         {
             if (bloodInfusionAbilityReady && !bloodInfusionAbilityActive)
             {
