@@ -11,13 +11,17 @@ public class AbilityUI : MonoBehaviour
     {
         if (gameObject.CompareTag("Bleed Ability UI"))
         {
-            if (PlayerAbilities.bleedAbilityReady == true && BloodMeter.bloodMeter >= 25)
+            if (PlayerAbilities.bleedAbilityReady == true && BloodMeter.bloodMeter >= 25 && !BloodMeter.rageActive)
             {
                 CombatUIText.text = "Bleed: Ready";
             }
-            else if (PlayerAbilities.bleedAbilityReady == true && BloodMeter.bloodMeter < 25)
+            else if (PlayerAbilities.bleedAbilityReady == true && BloodMeter.bloodMeter < 25 && !BloodMeter.rageActive)
             {
                 CombatUIText.text = "Bleed: Not Enough Blood";
+            }
+            else if (BloodMeter.rageActive)
+            {
+                CombatUIText.text = "Bleed: RAGE!!!";
             }
             else { CombatUIText.text = "Bleed: On CD"; }
         }
@@ -31,31 +35,39 @@ public class AbilityUI : MonoBehaviour
         }
         else if (gameObject.CompareTag("Blood Infusion UI"))
         {
-            if (PlayerAbilities.bloodInfusionAbilityReady == true && BloodMeter.bloodMeter >= 5 && PlayerHealth.currentHealth >= 11)
+            if (PlayerAbilities.bloodInfusionAbilityReady == true && BloodMeter.bloodMeter >= 5 && PlayerHealth.currentHealth >= 11 && !BloodMeter.rageActive)
             {
                 CombatUIText.text = "Blood Infusion: Ready";
             }
-            else if (PlayerAbilities.bleedAbilityReady == true && BloodMeter.bloodMeter < 5 && PlayerHealth.currentHealth >= 11)
+            else if (PlayerAbilities.bleedAbilityReady == true && BloodMeter.bloodMeter < 5 && PlayerHealth.currentHealth >= 11 && !BloodMeter.rageActive)
             {
                 CombatUIText.text = "Blood Infusion: Not Enough Blood";
             }
-            else if (PlayerAbilities.bleedAbilityReady == true && BloodMeter.bloodMeter >= 5 && PlayerHealth.currentHealth < 11)
+            else if (PlayerAbilities.bleedAbilityReady == true && BloodMeter.bloodMeter >= 5 && PlayerHealth.currentHealth < 11 && !BloodMeter.rageActive)
             {
                 CombatUIText.text = "Blood Infusion: Not Enough Health";
             }
-            else if (PlayerAbilities.bleedAbilityReady == true && BloodMeter.bloodMeter < 5 && PlayerHealth.currentHealth < 11)
+            else if (PlayerAbilities.bleedAbilityReady == true && BloodMeter.bloodMeter < 5 && PlayerHealth.currentHealth < 11 && !BloodMeter.rageActive)
             {
                 CombatUIText.text = "Blood Infusion: Not Enough Resources";
+            }
+            else if (BloodMeter.rageActive)
+            {
+                CombatUIText.text = "Blood Infusion: RAGE!!!";
             }
             else { CombatUIText.text = "Blood Infusion: Not Ready"; }
         }
         else if (gameObject.CompareTag("Blood Infusion Status UI"))
         {
-            if (PlayerAbilities.bloodInfusionAbilityActive == true)
+            if (PlayerAbilities.bloodInfusionAbilityActive == true && !BloodMeter.rageActive)
             {
-                CombatUIText.text = "Blood Infusion: Active";
+                CombatUIText.text = "Blood Infusion Status: Active";
             }
-            else { CombatUIText.text = "Blood Infusion: Not Active"; }
+            else if (BloodMeter.rageActive)
+            {
+                CombatUIText.text = "Blood Infusion Status: RAGE!!!";
+            }
+            else { CombatUIText.text = "Blood Infusion Status: Not Active"; }
         }
     }
 }

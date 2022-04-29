@@ -14,7 +14,7 @@ public class PlayerCombat : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse1) && !BloodMeter.rageActive)
         {
             if (rangedAttackReady == true && !PlayerAbilities.bloodInfusionAbilityActive)
             {
@@ -30,8 +30,17 @@ public class PlayerCombat : MonoBehaviour
                 PlayerAbilities.bloodInfusionAbilityActive = false;
                 Invoke(nameof(RangedAttackReady), rangedAttackCD);
             }
-            else { Debug.Log("on cd"); }
         }
+        else if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            if (rangedAttackReady == true)
+            {
+                RangedAttack(2);
+                rangedAttackReady = false;
+                Invoke(nameof(RangedAttackReady), rangedAttackCD / 2);
+            }
+        }
+        else { Debug.Log("on cd"); }
     }
 
     void RangedAttack(int damage)
