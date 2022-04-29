@@ -71,8 +71,11 @@
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\Doors.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
+<<<<<<< Updated upstream
     <Compile Include="Assets\Scripts\ReturnToMainMenu.cs" />
     <Compile Include="Assets\Scripts\VictoryMenu.cs" />
+=======
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

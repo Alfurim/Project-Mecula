@@ -1089,13 +1089,13 @@
       <Project>{AAD7DBFA-59C0-A6B5-4820-A7478FD362A2}</Project>
       <Name>Unity.VisualScripting.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{30ECA171-BB67-FE99-66F4-7226A3722CF1}</Project>
-      <Name>UnityEditor.UI</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{467E5A9C-8EF8-90B4-9860-9E8A6C1DD79E}</Project>
       <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{30ECA171-BB67-FE99-66F4-7226A3722CF1}</Project>
+      <Name>UnityEditor.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
