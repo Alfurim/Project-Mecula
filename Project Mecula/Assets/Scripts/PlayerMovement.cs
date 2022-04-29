@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -334,6 +335,10 @@ public class PlayerMovement : MonoBehaviour
         {
             Destroy(other.gameObject);
             Destroy(GameObject.FindGameObjectWithTag("Key3"));
+        }
+        else if (gameObject.CompareTag("Player") && other.gameObject.CompareTag("Death"))
+        {
+            SceneManager.LoadScene("SampleScene");
         }
     }
 }

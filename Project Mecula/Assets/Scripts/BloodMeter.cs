@@ -31,12 +31,6 @@ public class BloodMeter : MonoBehaviour
         {
             RageActivate();
         }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            bloodMeter += 40f;
-            stopTimer = 0f;
-        }
     }
 
     private void FixedUpdate()
