@@ -142,8 +142,8 @@
     <Compile Include="Library\PackageCache\com.unity.probuilder@5.0.4\Runtime\Core\TriggerBehaviour.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@5.0.4\Runtime\Core\SelectionPickerRenderer.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@5.0.4\Runtime\Core\Transform2D.cs" />
-    <Compile Include="Library\PackageCache\com.unity.probuilder@5.0.4\Runtime\Core\IHasDefault.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@5.0.4\Runtime\Core\SelectionPickerSettings.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@5.0.4\Runtime\Core\IHasDefault.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@5.0.4\Runtime\Core\Triangle.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@5.0.4\Runtime\MeshOperations\UV\TextureStitching.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@5.0.4\Runtime\Core\EdgeUtility.cs" />
