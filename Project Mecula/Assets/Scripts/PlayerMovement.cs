@@ -317,6 +317,7 @@ public class PlayerMovement : MonoBehaviour
         else if (gameObject.CompareTag("Player") && other.gameObject.CompareTag("Blood Pack"))
         {
             BloodMeter.bloodMeter += 50;
+            BloodMeter.stopTimer = 0;
             Destroy(other.gameObject);
         }
         else if (gameObject.CompareTag("Player") && other.gameObject.CompareTag("Key1"))
