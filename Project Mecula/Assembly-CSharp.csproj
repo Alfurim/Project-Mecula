@@ -56,17 +56,22 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\GruntAI.cs" />
     <Compile Include="Assets\Scripts\PlayerCombat.cs" />
     <Compile Include="Assets\Scripts\PlayerLook.cs" />
     <Compile Include="Assets\Scripts\RangedAttackUI.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\MoveCamera.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
+    <Compile Include="Assets\Scripts\RageUI.cs" />
     <Compile Include="Assets\Scripts\PlayerAbilities.cs" />
     <Compile Include="Assets\Scripts\AbilityUI.cs" />
     <Compile Include="Assets\Scripts\WallRunning.cs" />
     <Compile Include="Assets\Scripts\BloodMeter.cs" />
+    <Compile Include="Assets\Scripts\DefenderAI.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\DashUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_Creepy_Cat\_Docs\Doc.txt" />
@@ -713,6 +718,14 @@
       <Project>{FAF1027A-9170-16D7-78CF-7330278B93B1}</Project>
       <Name>Unity.VisualScripting.State.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.Editor.csproj">
+      <Project>{B31ACFCE-89EE-09AA-8483-A8066DEC0407}</Project>
+      <Name>Unity.AI.Navigation.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.csproj">
+      <Project>{83FAF3FA-8E74-31AE-E3A7-87A7757E7C05}</Project>
+      <Name>Unity.AI.Navigation</Name>
+    </ProjectReference>
     <ProjectReference Include="VSSettingsProvider.csproj">
       <Project>{DF82A88B-522B-9463-0FDA-27359E28E06E}</Project>
       <Name>VSSettingsProvider</Name>
@@ -752,14 +765,6 @@
     <ProjectReference Include="Unity.VisualScripting.Core.csproj">
       <Project>{AAD7DBFA-59C0-A6B5-4820-A7478FD362A2}</Project>
       <Name>Unity.VisualScripting.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.AI.Navigation.csproj">
-      <Project>{83FAF3FA-8E74-31AE-E3A7-87A7757E7C05}</Project>
-      <Name>Unity.AI.Navigation</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.AI.Navigation.Editor.csproj">
-      <Project>{B31ACFCE-89EE-09AA-8483-A8066DEC0407}</Project>
-      <Name>Unity.AI.Navigation.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
