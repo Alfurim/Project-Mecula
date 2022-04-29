@@ -340,5 +340,9 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene("SampleScene");
         }
+        else if (gameObject.CompareTag("Player") && other.gameObject.CompareTag("Victory"))
+        {
+            SceneManager.LoadScene("Game End");
+        }
     }
 }

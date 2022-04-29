@@ -21,6 +21,7 @@ TagManager:
   - Key2
   - Key3
   - Death
+  - Victory
   layers:
   - Default
   - TransparentFX
