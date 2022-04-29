@@ -40,7 +40,6 @@ public class PlayerCombat : MonoBehaviour
                 Invoke(nameof(RangedAttackReady), rangedAttackCD / 2);
             }
         }
-        else { Debug.Log("on cd"); }
     }
 
     void RangedAttack(int damage)

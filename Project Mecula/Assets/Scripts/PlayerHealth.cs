@@ -26,9 +26,8 @@ public class PlayerHealth : MonoBehaviour
         {
             SceneManager.LoadScene("SampleScene");
         }
-
     }
-    // Update is called once per frame
+
     void FixedUpdate()
     {
         if (BloodMeter.bloodMeter <= 0)

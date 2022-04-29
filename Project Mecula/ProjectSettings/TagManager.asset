@@ -12,6 +12,9 @@ TagManager:
   - Bleed Ability UI
   - Blood Infusion UI
   - Blood Infusion Status UI
+  - Wall
+  - Ground
+  - Enemy
   layers:
   - Default
   - TransparentFX
